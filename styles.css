@@ -1,0 +1,275 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Modern font */
+    margin: 0;
+    padding: 0;
+    background-color: #251f1f;
+    /* Light gray background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #969bd3;
+    /* White container */
+    width: 90%;
+    /* Wider container on larger screens */
+    max-width: 700px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Softer shadow */
+}
+
+h1.logo {
+    font-family: 'Pacifico', cursive;
+    /* Playful logo font */
+    text-align: center;
+    color: #e44d26;
+    /* Orange accent color */
+    margin-bottom: 0.5em;
+}
+
+header {
+    text-align: center;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 1em;
+}
+
+#date {
+    font-size: 0.9em;
+    color: #888;
+}
+
+/* Mood Input Section */
+#mood-input {
+    margin-bottom: 1.5em;
+}
+
+#mood-options {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1em;
+}
+
+#mood-options button {
+    font-size: 2.5em;
+    border: none;
+    background: none;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+#mood-options button:hover {
+    opacity: 1;
+}
+
+#mood-options button.selected {
+    opacity: 1;
+    /* Highlight selected mood */
+    transform: scale(1.1);
+}
+
+textarea#note {
+    width: 100%;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 1em;
+    resize: vertical;
+    /* Allow vertical resizing */
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    /* Align buttons to the right */
+    gap: 0.5em;
+    /* Spacing between buttons */
+}
+
+button#save,
+button#clear {
+    padding: 0.75em 1.25em;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button#save {
+    background-color: #e44d26;
+    color: white;
+}
+
+button#save:hover {
+    background-color: #d13912;
+}
+
+button#clear {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+button#clear:hover {
+    background-color: #e0e0e0;
+}
+
+/* Weather Display Section */
+#weather-display {
+    text-align: center;
+    margin-bottom: 1.5em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #eee;
+}
+
+#weather-info {
+    font-size: 0.95em;
+    color: #666;
+}
+
+#weather-info p {
+    margin: 0.4em 0;
+}
+
+/* Journal Entries Section */
+#journal-entries {
+    margin-bottom: 1.5em;
+}
+
+#entries {
+    margin-bottom: 1em;
+}
+
+.entry {
+    padding: 1em;
+    border-bottom: 1px solid #eee;
+}
+
+.entry:last-child {
+    border-bottom: none;
+}
+
+.entry p {
+    margin: 0.2em 0;
+}
+
+button#view-calendar {
+    background-color: #4a90e2;
+    color: white;
+    padding: 0.75em 1.25em;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button#view-calendar:hover {
+    background-color: #3575c1;
+}
+
+/* Calendar Overlay Styles */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    /* Ensure it's on top */
+}
+
+#calendar {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 1em;
+    width: 90%;
+    max-width: 400px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #ddd;
+}
+
+.calendar-header h2 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+#calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    /* 7 days a week */
+    gap: 0.2em;
+    /* Spacing between days */
+    text-align: center;
+}
+
+#calendar-days div {
+    padding: 0.5em;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#calendar-days div.today {
+    background-color: #e44d26;
+    color: white;
+}
+
+#calendar-days div.mood-entry {
+    background-color: #ffcc80;
+    /* Light orange for mood days */
+}
+
+button#close-calendar {
+    background-color: #6c757d;
+    /* Bootstrap's secondary color */
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 0.5em;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        margin: 10px;
+    }
+
+    #mood-options {
+        flex-wrap: wrap;
+        /* Wrap mood options on smaller screens */
+        justify-content: center;
+    }
+
+    #mood-options button {
+        margin: 0.2em;
+        font-size: 2em;
+    }
+}

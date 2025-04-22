@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Journal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+
+<body>
+    <div class="container">
+
+        <header>
+            <h1 class="logo">Moodify</h1>
+            <div id="date"></div>
+        </header>
+
+        <section id="mood-input">
+            <h2>How are you feeling today?</h2>
+            <div id="mood-options">
+                <button data-mood="happy" aria-label="Happy">😊</button>
+                <button data-mood="sad" aria-label="Sad">😢</button>
+                <button data-mood="neutral" aria-label="Neutral">😐</button>
+                <button data-mood="excited" aria-label="Excited">🤩</button>
+                <button data-mood="angry" aria-label="Angry">😠</button>
+            </div>
+            <textarea id="note" placeholder="Jot down your thoughts..."></textarea>
+            <div class="button-group">
+                <button id="save">Save Entry</button>
+                <button id="clear">Clear</button>
+            </div>
+        </section>
+
+        <section id="weather-display">
+            <h2>Today's Weather</h2>
+            <div id="weather-info">
+                </div>
+        </section>
+
+        <section id="journal-entries">
+            <h2>Past Entries</h2>
+            <div id="entries">
+                </div>
+            <button id="view-calendar">View Calendar</button>
+        </section>
+
+        <div id="calendar-overlay" class="overlay">
+            <div id="calendar">
+                <div class="calendar-header">
+                    <button id="prev-month">&lt;</button>
+                    <h2 id="current-month-year"></h2>
+                    <button id="next-month">&gt;</button>
+                </div>
+                <div id="calendar-days"></div>
+                <button id="close-calendar">Close</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
